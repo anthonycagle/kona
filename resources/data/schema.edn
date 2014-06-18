@@ -52,7 +52,12 @@
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/ident :purchase/used
+  :db/ident :purchase/started
+  :db/valueType :db.type/instant
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :purchase/ended
   :db/valueType :db.type/instant
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}]
@@ -64,12 +69,17 @@
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
-  :db/ident :rating/coffee
+  :db/ident :rating/purchase
   :db/valueType :db.type/ref
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}
  {:db/id #db/id[:db.part/db]
   :db/ident :rating/rating
   :db/valueType :db.type/long
+  :db/cardinality :db.cardinality/one
+  :db.install/_attribute :db.part/db}
+ {:db/id #db/id[:db.part/db]
+  :db/ident :rating/rated-on
+  :db/valueType :db.type/instant
   :db/cardinality :db.cardinality/one
   :db.install/_attribute :db.part/db}]

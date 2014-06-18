@@ -1,0 +1,62 @@
+[;; roasters
+ {:db/id #db/id[:db.part/user -1000]
+  :roaster/name "Barisimo"}
+ {:db/id #db/id[:db.part/user -1001]
+  :roaster/name "Bourbon Coffee"}
+
+ ;;coffee
+ {:db/id #db/id[:db.part/user -2000]
+  :coffee/name "Clockwork"
+  :coffee/roaster #db/id[:db.part/user -1000]}
+ {:db/id #db/id[:db.part/user -2001]
+  :coffee/name "Cafe Keza"
+  :coffee/roaster #db/id[:db.part/user -1001]}
+ {:db/id #db/id[:db.part/user -2002]
+  :coffee/name "Kizi Rift"
+  :coffee/roaster #db/id[:db.part/user -1001]}
+
+ ;;person
+ {:db/id #db/id[:db.part/user -3000]
+  :person/name "Andrew"}
+ {:db/id #db/id[:db.part/user -3001]
+  :person/name "Miro"}
+ {:db/id #db/id[:db.part/user -3002]
+  :person/name "Joe"}
+
+ ;;purchase
+ {:db/id #db/id[:db.part/user -4000]
+  :purchase/person #db/id[:db.part/user -3000]
+  :purchase/coffee #db/id[:db.part/user -2001]
+  :purchase/amount "14oz"
+  :purchase/bought #inst "2014-05-10"}
+ {:db/id #db/id[:db.part/user -4001]
+  :purchase/person #db/id[:db.part/user -3000]
+  :purchase/coffee #db/id[:db.part/user -2002]
+  :purchase/amount "14oz"
+  :purchase/bought #inst "2014-05-10"
+  :purchase/started #inst "2014-05-11"
+  :purchase/ended #inst "2014-05-13"}
+ {:db/id #db/id[:db.part/user -4002]
+  :purchase/person #db/id[:db.part/user -3001]
+  :purchase/coffee #db/id[:db.part/user -2000]
+  :purchase/amount "14oz"
+  :purchase/bought #inst "2014-04-30"
+  :purchase/started #inst "2014-05-05"
+  :purchase/ended #inst "2014-05-10"}
+
+ ;;rating
+ {:db/id #db/id[:db.part/user]
+  :rating/person #db/id[:db.part/user -3000]
+  :rating/purchase #db/id[:db.part/user -4001]
+  :rating/rating 3
+  :rating/rated-on #inst "2014-05-11"}
+ {:db/id #db/id[:db.part/user]
+  :rating/person #db/id[:db.part/user -3001]
+  :rating/purchase #db/id[:db.part/user -4001]
+  :rating/rating 4
+  :rating/rated-on #inst "2014-05-11"}
+ {:db/id #db/id[:db.part/user]
+  :rating/person #db/id[:db.part/user -3002]
+  :rating/purchase #db/id[:db.part/user -4001]
+  :rating/rating 2
+  :rating/rated-on #inst "2014-05-11"}]

@@ -11,7 +11,7 @@
 
 (defn transact-all [conn f]
   (doseq [txd (read-all f)]
-    (d/transact conn txd))
+    @(d/transact conn txd))
   :done)
 
 (defn create-db []
